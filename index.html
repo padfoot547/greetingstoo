@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The One Made for Ebi ♡</title>
+<style>
+:root{--purple:#56345f;--orange:#e78a32;--cream:#fff7e9;--ink:#49364b}
+*{box-sizing:border-box}body{margin:0;background:#f8ecdf;color:var(--ink);font-family:Georgia,serif;min-height:100vh;overflow-x:hidden}
+main{width:min(850px,92vw);margin:auto;padding:30px 0 55px;position:relative;z-index:1}.top{text-align:center;font:700 .72rem Arial;letter-spacing:.2em;color:#8b5a83;text-transform:uppercase}
+h1{text-align:center;font-size:clamp(2.6rem,8vw,5rem);font-weight:normal;color:var(--purple);margin:14px 0}h1 span{color:var(--orange)}
+.dots{display:flex;justify-content:center;gap:9px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--orange)}.dots i:nth-child(2){background:#e9a9bd}.dots i:nth-child(3){background:#8b6b96}
+.subtitle{text-align:center;line-height:1.7;margin:20px auto 25px}
+.door-scene{display:grid;place-items:center;min-height:310px;perspective:1000px}.door-frame{position:relative;width:min(290px,75vw);height:275px;background:#f7d9c4;border:12px solid #fff4e8;box-shadow:0 15px 30px #50304c20;cursor:pointer;outline:none}
+.door{position:absolute;inset:0;background:#704477;border:3px solid #4d2e58;transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.75,.2,1);z-index:2}.door:before{content:"";position:absolute;left:50%;top:12%;height:72%;width:42%;transform:translateX(-50%);border:3px solid #a47ca6;box-shadow:0 0 0 5px #704477,0 0 0 8px #4d2e58}.door:after{content:"";position:absolute;right:15px;top:52%;width:12px;height:12px;border-radius:50%;background:#e8b35b}
+.peep{position:absolute;z-index:1;left:50%;top:36%;transform:translateX(-50%);width:68px;height:68px;border:8px solid #e7b64e;border-radius:50%;background:#fff3d9;display:grid;place-items:center;color:#744778;font-size:1.9rem}.door-label{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#fff7e9;font:700 .72rem Arial;letter-spacing:.12em}.door-frame.open .door{transform:rotateY(-112deg)}
+.hint{text-align:center;font:.82rem Arial;color:#86617f}.panel{display:none;animation:pop .8s ease both}.panel.show{display:block}@keyframes pop{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.cafe{margin:25px auto 0;padding:clamp(22px,5vw,42px);background:var(--cream);border:2px solid #e6c7a6;box-shadow:8px 8px 0 #56345f18;position:relative}.cafe:before{content:"CENTRAL PERK";position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff9ed;padding:6px 15px;font:700 .72rem Arial;letter-spacing:.18em;white-space:nowrap}
+.coffee{text-align:center;font-size:2rem}.small{text-align:center;text-transform:uppercase;letter-spacing:.2em;font:700 .68rem Arial;color:#a26c8e}h2{text-align:center;font-size:clamp(1.8rem,5vw,2.7rem);font-weight:normal;color:var(--purple);margin:12px 0 20px}
+.letter{white-space:pre-wrap;font-size:1.08rem;line-height:1.9;min-height:230px}.cursor{display:inline-block;width:2px;height:1em;background:var(--orange);vertical-align:-.12em;animation:blink .8s steps(2) infinite}@keyframes blink{50%{opacity:0}}.sign{text-align:right;color:#8a5680;font-style:italic;font-size:1.15rem;margin-top:18px}
+.memory{text-align:center;margin:38px auto 0}.memory p{line-height:1.7}.polaroid{background:white;padding:10px 10px 17px;width:min(350px,85vw);margin:20px auto;box-shadow:0 10px 25px #51324b1a;transform:rotate(-1deg)}.photo-area{min-height:220px;background:linear-gradient(135deg,#f5d9e4,#fbe9d3);display:grid;place-items:center;padding:18px;color:#805b7f;font:.9rem/1.6 Arial}.photo-area img{width:100%;height:auto;max-height:420px;object-fit:cover;display:none}.caption{font-style:italic;padding-top:13px}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px auto}button,.upload{border:1px solid #805786;background:#fff7e9;color:#56345f;padding:11px 17px;border-radius:999px;cursor:pointer;font:.88rem Arial}button:hover,.upload:hover{background:#f3dce9}input[type=file]{display:none}.note{text-align:center;font:.78rem/1.6 Arial;color:#86617f}.footer{text-align:center;margin:42px 0 0;font:.78rem Arial;color:#8d6a8b}
+.hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}.hearts span{position:absolute;bottom:-40px;color:#c58ca8;opacity:.55;animation:rise linear infinite}@keyframes rise{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head><body><div class="hearts" id="hearts"></div><main>
+<div class="top">the one made especially for</div><h1>Ebi <span>♡</span></h1><div class="dots"><i></i><i></i><i></i></div>
+<p class="subtitle">Six friends, one iconic couch, and a tiny little surprise just for you.<br>Ready? <em>Could this BE any cuter?</em> ☕</p>
+<section class="door-scene"><div class="door-frame" id="door" role="button" tabindex="0" aria-label="Open the purple door"><div class="peep">♡</div><div class="door"><div class="door-label">KNOCK KNOCK, EBI!</div></div></div></section>
+<div class="hint" id="hint">tap the purple door to come on in ♡</div>
+<section class="panel" id="panel"><article class="cafe"><div class="coffee">☕</div><div class="small">a little note from your friend</div><h2>The One Where I Tell You…</h2><div class="letter" id="letter" aria-live="polite"></div><span class="cursor" id="cursor"></span><div class="sign">Could I BE rooting for you any harder? ♡</div></article>
+<section class="memory"><h2>The One with Our Little Memories 📸</h2><p>Every good sitcom needs a few favorite scenes.<br>Here’s a place for one of yours. ♡</p>
+<div class="polaroid"><div class="photo-area"><div id="prompt" style="display:none">📷<br><br>Add a favorite memory here<br><small>choose a photo from your device</small></div><img id="photo" src="ebi-memory.jpeg" alt="A favorite memory together" style="display:block"></div><div class="caption" id="caption">The one with a memory worth keeping ♡</div></div>
+<div class="controls"><label class="upload" for="photoInput">♡ Add a photo</label><input id="photoInput" type="file" accept="image/*"><button id="musicButton">♫ Play background music</button><button id="replay">↻ Read the letter again</button></div>
+<p class="note">A little memory, saved here for you. ♡<br>Press the music button whenever you want a soundtrack.</p></section></section>
+<div class="footer">made with love, coffee, and a little sitcom magic ✨</div></main>
+<audio id="music" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
+<script>
+const message = `Hey, Ebi!
+
+If our friendship were an episode of Friends, I feel like this would be one of those scenes where Chandler makes a joke, Monica pretends she's not amused, and then laughs anyway.
+
+First of all, congratulations: you've been cast as one of my favorite people. No audition required. The role comes with unlimited appreciation, occasional terrible jokes, and absolutely no pressure to remember where we left our coffee.
+
+I'm really glad I got to know you. Our little conversations and random moments have a way of making an ordinary day feel less ordinary. And honestly? If life were a sitcom, I'd keep this episode in the season finale highlights.
+
+Don't worry, this isn't a dramatic Ross-and-Rachel-style speech. There will be no “WE WERE ON A BREAK!” debate. I just wanted to say that you're pretty awesome, and I hope you never forget that.
+
+So whenever life gets chaotic, channel your inner Monica: take a breath, get organized if you must, and remember that you don't have to have everything figured out. And if that doesn't work, there's always a coffee break at Central Perk.
+
+Thanks for being part of my story, Ebi. You're a genuinely lovely plot twist. ♡
+
+P.S. Could this note BE any more cheesy? I tried.`;
+const door=document.getElementById('door'),panel=document.getElementById('panel'),hint=document.getElementById('hint'),letter=document.getElementById('letter'),cursor=document.getElementById('cursor');let opened=false,timer=null;
+function typeLetter(){if(timer)clearInterval(timer);letter.textContent='';cursor.style.display='inline-block';let i=0;timer=setInterval(()=>{letter.textContent+=message.charAt(i++);if(i>=message.length){clearInterval(timer);timer=null;cursor.style.display='none'}},24)}
+function openDoor(){if(opened)return;opened=true;door.classList.add('open');hint.textContent='welcome to your little corner of Central Perk ♡';setTimeout(()=>{panel.classList.add('show');typeLetter();panel.scrollIntoView({behavior:'smooth',block:'start'})},850)}
+door.addEventListener('click',openDoor);door.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDoor()}});
+document.getElementById('replay').addEventListener('click',()=>{typeLetter();panel.scrollIntoView({behavior:'smooth',block:'start'})});
+const music=document.getElementById('music'),musicButton=document.getElementById('musicButton');musicButton.addEventListener('click',async()=>{if(music.paused){try{await music.play();musicButton.textContent='Ⅱ Pause background music'}catch(e){alert('Make sure music.mp3 is in the same folder as this page, then try again.')}}else{music.pause();musicButton.textContent='♫ Play background music'}});
+document.getElementById('photoInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=ev=>{const img=document.getElementById('photo');img.src=ev.target.result;img.style.display='block';document.getElementById('prompt').style.display='none';document.getElementById('caption').textContent='The one with our favorite memory ♡'};reader.readAsDataURL(file)});
+const hearts=document.getElementById('hearts');for(let i=0;i<17;i++){const s=document.createElement('span');s.textContent=['♡','✦','♥'][i%3];s.style.left=Math.random()*100+'%';s.style.animationDuration=(10+Math.random()*12)+'s';s.style.animationDelay=(-Math.random()*15)+'s';s.style.fontSize=(12+Math.random()*17)+'px';hearts.appendChild(s)}
+</script></body></html>
